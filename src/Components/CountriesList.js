@@ -1,25 +1,44 @@
-import React from 'react';
-import Country from './Country';
+import React from "react";
+import Country from "./Country";
 
 const CountriesList = props => {
+  const results = props.data;
+  let countries;
 
-    const results = props.data;
-    let countries = results.map(country => 
-
-        <Country 
+  if (props.modifier === "total") {
+    countries = results.map((country) => (
+      <Country
         key={country.countryInfo._id}
         id={country.countryInfo._id}
         flag={country.countryInfo.flag}
-        name={country.country} 
+        name={country.country}
         cases={country.cases}
-        />
-    );
+      />
+    ));
+  } else if (props.modifier === "cured") {
+    countries = results.map((country) => (
+      <Country
+        key={country.countryInfo._id}
+        id={country.countryInfo._id}
+        flag={country.countryInfo.flag}
+        name={country.country}
+        cases={country.recovered}
 
-    return (
-        <ul>
-            {countries}
-        </ul>
-    );
-}
+      />
+    ));
+  } else if (props.modifier === "deaths") {
+    countries = results.map((country) => (
+      <Country
+        key={country.countryInfo._id}
+        id={country.countryInfo._id}
+        flag={country.countryInfo.flag}
+        name={country.country}
+        cases={country.deaths}
+      />
+    ));
+  }
+
+  return <ul className="list">{countries}</ul>;
+};
 
 export default CountriesList;

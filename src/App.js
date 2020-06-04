@@ -3,53 +3,51 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 
+
 // Component imports
 import Header from "./Components/Header";
 import Panel from "./Components/Panel";
-import CountriesList from "./Components/CountriesList";
-import Map from "./Components/Map";
+import MapViewer from "./Components/MapViewer";
 import Graph from "./Components/Graph";
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
-      countries: [],
-    };
+      countries: []
+    }
   }
 
   componentDidMount() {
     axios
       .get("https://corona.lmao.ninja/v2/countries?yesterday&sort")
-      .then(response => {
+      .then((response) => {
         this.setState({
-          countries: response.data
+          countries: response.data,
         });
-        console.log(response.data)
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
   }
-
+  
   render() {
     return (
       <BrowserRouter>
         <Header />
         <div className="app">
           <div id="tiles" className="tile is-ancestor">
-            <div className="tile is-4 is-vertical is-parent">
-              <div className="tile is-child box">
-              <article className="panel is-black">
-                <Panel />
-                <div className="countries-list">
-                <CountriesList data={this.state.countries}/>
-                </div>
+            <div id="search-tool" className="tile is-4 is-vertical is-parent">
+              <article className="tile is-child box">
+              <p className="title is-4">Countries</p>
+                <article className="panel">
+                  <Panel data={this.state.countries}/>
                 </article>
-              </div>
+              </article>
             </div>
             <div className="tile is-parent is-vertical">
-              <Map />
+              <MapViewer data={this.state.countries}/>
               <Graph />
             </div>
           </div>

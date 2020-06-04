@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Country = (props) => {
+const Country = props => {
 
-    return (
-        <li>
-        <Link to="test" className="panel-block is-active">
-          <span className="panel-icon">
-            <img src={props.flag} alt=""></img>
-          </span>
-          <div>{props.name}: <div className="cases">{props.cases}</div></div>
-        </Link>
-        </li>
-    );
- 
+  return (
+    <li className="list-item">
+      <Link to={props.name.toLowerCase()} className="panel-block">
+        <span className="panel-icon">
+          <img src={props.flag} alt=""></img>
+        </span>
+        <div>
+          <strong>{props.name}:</strong><div className="cases">{props.cases}</div>
+        </div>
+      </Link>
+    </li>
+  );
 };
 
 export default Country;
