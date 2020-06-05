@@ -11,23 +11,11 @@ class Panel extends Component {
 
   }
 
-  setTotalActive = () => {
+  setActive = (category) => {
     this.setState({
-      activeLink: "total",
-    });
-  };
-
-  setCuredActive = () => {
-    this.setState({
-      activeLink: "cured",
-    });
-  };
-
-  setDeathsActive = () => {
-    this.setState({
-      activeLink: "deaths",
-    });
-  };
+      activeLink: category
+    })
+  }
 
   render() {
     return (
@@ -35,19 +23,19 @@ class Panel extends Component {
         <p className="panel-tabs">
           <a
             className={this.state.activeLink === "total" ? "is-active" : ""}
-            onClick={this.setTotalActive}
+            onClick={() => this.setActive('total')}
           >
             <strong>Total cases</strong>
           </a>
           <a
             className={this.state.activeLink === "cured" ? "is-active" : ""}
-            onClick={this.setCuredActive}
+            onClick={() => this.setActive('cured')}
           >
             <strong>Cured</strong>
           </a>
           <a
             className={this.state.activeLink === "deaths" ? "is-active" : ""}
-            onClick={this.setDeathsActive}
+            onClick={() => this.setActive('deaths')}
           >
             <strong>Deaths</strong>
           </a>

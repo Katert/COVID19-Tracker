@@ -16,7 +16,7 @@ const MapViewer = props => {
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
           />
 
-          {/* {countryData.countryInfo.map(country => (
+          {/* {props.data.countryInfo.map(country => (
             <Marker key={country.countryInfo._id} position={[country.countryInfo.lat, country.countryInfo.long]}></Marker>
           ))} */}
 
