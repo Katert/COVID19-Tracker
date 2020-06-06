@@ -8,9 +8,9 @@ export default class Header extends Component {
       <nav className="navbar is-black" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <span className="navbar-item" href="">
-            <a><h3 id="tool-title">
+            <span><h3 id="tool-title">
             🧬 COVID-19 Tracker
-            </h3></a>
+            </h3></span>
           </span>
 
           <a
