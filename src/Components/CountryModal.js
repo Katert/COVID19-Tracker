@@ -14,9 +14,6 @@ const CountryModal = props => {
             <br/>
             <div className="table-container">
             <table className="table is-fullwidth">
-              <thead>
-                <tr><th>Statistics</th></tr><br/>
-              </thead>
               <tbody>
                 <tr>
                   <th>Total cases:</th>
@@ -47,7 +44,7 @@ const CountryModal = props => {
                   <td>{props.critical}</td>
                 </tr>
                 <tr>
-                  <th>Tests taken (might not be registered if '0'):</th>
+                  <th>Tests taken:</th>
                   <td>{props.tests}</td>
                 </tr>
               </tbody>

@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(155, 125, 96);
+  background-color: rgb(51, 58, 59);
 }
 
 body {
@@ -51,7 +51,7 @@ body {
 
 .app {
   margin: auto;
-  width: 90vw;
+  width: 100vw;
   height: 90vh;
   padding: 30px;
 }
@@ -98,3 +98,8 @@ body {
   padding-bottom: 30px;
 }
 
+.pulse:hover {
+    fill: rgb(82, 1, 1);
+    fill-opacity: 0.4;
+    transition: all 0.3s;
+}
