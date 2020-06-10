@@ -31,10 +31,7 @@ class Country extends Component {
         recovered={this.props.recovered}
         active={this.props.active}
         critical={this.props.critical}
-        casesPerMillion={this.props.casesPerOneMillion}
-        deathsPerMillion={this.props.deathsPerOneMillion}
         tests={this.props.tests}
-        testsPerMillion={this.props.testsPerOneMillion}
       />
         <a className="panel-block">
           <span className="panel-icon">

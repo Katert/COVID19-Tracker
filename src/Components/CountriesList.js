@@ -20,10 +20,7 @@ const CountriesList = props => {
         recovered={country.recovered}
         active={country.active}
         critical={country.critical}
-        casesPerMillion={country.casesPerOneMillion}
-        deathsPerMillion={country.deathsPerOneMillion}
         tests={country.tests}
-        testsPerMillion={country.testsPerOneMillion}
       />
     ));
   } else if (props.modifier === "recovered") {
@@ -41,10 +38,7 @@ const CountriesList = props => {
         recovered={country.recovered}
         active={country.active}
         critical={country.critical}
-        casesPerMillion={country.casesPerOneMillion}
-        deathsPerMillion={country.deathsPerOneMillion}
         tests={country.tests}
-        testsPerMillion={country.testsPerOneMillion}
       />
     ));
   } else if (props.modifier === "deaths") {
@@ -62,10 +56,7 @@ const CountriesList = props => {
         recovered={country.recovered}
         active={country.active}
         critical={country.critical}
-        casesPerMillion={country.casesPerOneMillion}
-        deathsPerMillion={country.deathsPerOneMillion}
         tests={country.tests}
-        testsPerMillion={country.testsPerOneMillion}
       />
     ));
   }

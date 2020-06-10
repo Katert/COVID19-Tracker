@@ -27,27 +27,27 @@ const CountryModal = props => {
                   <td>{props.active}</td>
                 </tr>
                 <tr>
-                  <th>Cases today:</th>
+                  <th>Cases registered today:</th>
                   <td>{props.todayCases}</td>
+                </tr>
+                <tr>
+                  <th>Total recovered:</th>
+                  <td>{props.recovered}</td>
                 </tr>
                 <tr>
                   <th>Total deaths:</th>
                   <td>{props.deaths}</td>
                 </tr>
                 <tr>
-                  <th>Deaths today:</th>
+                  <th>Deaths registered today:</th>
                   <td>{props.todayDeaths}</td>
-                </tr>
-                <tr>
-                  <th>Recovered:</th>
-                  <td>{props.recovered}</td>
                 </tr>
                 <tr>
                   <th>Critical cases:</th>
                   <td>{props.critical}</td>
                 </tr>
                 <tr>
-                  <th>Tests taken (might not be registered if 0):</th>
+                  <th>Tests taken (might not be registered if '0'):</th>
                   <td>{props.tests}</td>
                 </tr>
               </tbody>
