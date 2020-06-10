@@ -5,14 +5,13 @@ class Panel extends Component {
   constructor() {
     super();
     this.state = {
-      activeLink: "cases",
-      search: "",
+      activeLink: "cases"
     };
   }
 
   setActiveCategory = (category) => {
     this.setState({
-      activeLink: category,
+      activeLink: category
     });
   };
 

@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   render() {
     return (
-
-      <nav className="navbar is-black" role="navigation" aria-label="main navigation">
+      <nav
+        className="navbar is-black"
+        role="navigation"
+        aria-label="main navigation"
+      >
         <div className="navbar-brand">
-          <span className="navbar-item" href="">
-            <span><h3 id="tool-title">
-            🧬 COVID-19 Tracker
-            </h3></span>
+          <span className="navbar-item">
+            <a>
+              <h3 id="tool-title">🧬 COVID-19 Tracker</h3>
+            </a>
           </span>
 
           <a
@@ -29,13 +32,24 @@ export default class Header extends Component {
         <div className="navbar-menu">
           <div className="navbar-start">
             <div className="navbar-item has-dropdown is-hoverable">
-              <a id="more-dropdown" className="navbar-link">More</a>
+              <a id="more-dropdown" className="navbar-link">
+                More
+              </a>
 
               <div className="navbar-dropdown">
-                <Link to={"/about"} className="navbar-item">About</Link>
-                <a href="https://github.com/Katert/covid19-tracker" className="navbar-item">Project repo (Github)</a>
+                <Link to={"/about"} className="navbar-item">
+                  About
+                </Link>
+                <a
+                  href="https://github.com/Katert/covid19-tracker"
+                  className="navbar-item"
+                >
+                  Project repo (Github)
+                </a>
                 <hr className="navbar-divider" />
-                <Link to={"/report-issue"} className="navbar-item">Report an issue</Link>
+                <Link to={"/report-issue"} className="navbar-item">
+                  Report an issue
+                </Link>
               </div>
             </div>
           </div>
@@ -43,7 +57,7 @@ export default class Header extends Component {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to={'/contact'} id="contact-button" className="button">
+                <Link to={"/contact"} id="contact-button" className="button">
                   <strong>Contact</strong>
                 </Link>
               </div>

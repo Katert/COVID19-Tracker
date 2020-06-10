@@ -12,7 +12,18 @@ const CountriesList = props => {
         id={country.countryInfo._id}
         flag={country.countryInfo.flag}
         name={country.country}
-        cases={country.cases}
+        totalCases={country.cases} // for modal
+        cases={country.cases} // for panel
+        todayCases={country.todayCases}
+        deaths={country.deaths}
+        todayDeaths={country.todayDeaths}
+        recovered={country.recovered}
+        active={country.active}
+        critical={country.critical}
+        casesPerMillion={country.casesPerOneMillion}
+        deathsPerMillion={country.deathsPerOneMillion}
+        tests={country.tests}
+        testsPerMillion={country.testsPerOneMillion}
       />
     ));
   } else if (props.modifier === "recovered") {
@@ -22,8 +33,18 @@ const CountriesList = props => {
         id={country.countryInfo._id}
         flag={country.countryInfo.flag}
         name={country.country}
-        cases={country.recovered}
-
+        totalCases={country.cases} // for modal
+        cases={country.recovered} // for panel
+        todayCases={country.todayCases}
+        deaths={country.deaths}
+        todayDeaths={country.todayDeaths}
+        recovered={country.recovered}
+        active={country.active}
+        critical={country.critical}
+        casesPerMillion={country.casesPerOneMillion}
+        deathsPerMillion={country.deathsPerOneMillion}
+        tests={country.tests}
+        testsPerMillion={country.testsPerOneMillion}
       />
     ));
   } else if (props.modifier === "deaths") {
@@ -33,7 +54,18 @@ const CountriesList = props => {
         id={country.countryInfo._id}
         flag={country.countryInfo.flag}
         name={country.country}
-        cases={country.deaths}
+        totalCases={country.cases} // for modal
+        cases={country.deaths} // for panel
+        todayCases={country.todayCases}
+        deaths={country.deaths}
+        todayDeaths={country.todayDeaths}
+        recovered={country.recovered}
+        active={country.active}
+        critical={country.critical}
+        casesPerMillion={country.casesPerOneMillion}
+        deathsPerMillion={country.deathsPerOneMillion}
+        tests={country.tests}
+        testsPerMillion={country.testsPerOneMillion}
       />
     ));
   }

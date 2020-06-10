@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
 
-    // Displays countries based on user input (search field)
+    // Enables searchbar
     let filteredCountries = this.state.countries.filter((country) => {
       return country.country.toLowerCase().includes(this.state.searchCountry.toLowerCase())
     })

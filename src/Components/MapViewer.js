@@ -4,21 +4,18 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 const MapViewer = props => {
 
-  const countryData = props.data;
-
   return (
-    <article className="tile is-child box">
+    <article className="mapviewer tile is-child box">
       <p className="title is-4">Map</p>
       
-        <Map center={[48.922499, -33.000396]} zoom={3}>
+        <Map center={[48.922499, -33.000396]} zoom={2}>
           <TileLayer
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-            attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'
           />
 
-          {/* {props.data.countryInfo.map(country => (
-            <Marker key={country.countryInfo._id} position={[country.countryInfo.lat, country.countryInfo.long]}></Marker>
-          ))} */}
+          {props.data.map((country, index) => (
+            <Marker key={index} position={[country.countryInfo.lat, country.countryInfo.long]}></Marker>
+          ))}
 
         </Map>
       

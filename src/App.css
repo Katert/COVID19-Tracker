@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(24, 23, 22);
+  background-color: rgb(155, 125, 96);
 }
 
 body {
@@ -83,5 +83,18 @@ body {
 
 .cases {
   color: black;
+}
+
+.mapviewer {
+  z-index: 0;
+}
+
+.panel {
+  z-index: -2;
+}
+
+.flag-image {
+  padding-left: 30%;
+  padding-bottom: 30px;
 }
 
