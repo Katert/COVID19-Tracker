@@ -33,7 +33,7 @@ class Country extends Component {
         critical={this.props.critical}
         tests={this.props.tests}
       />
-        <a className="panel-block">
+        <a href="#" className="panel-block">
           <span className="panel-icon">
             <img src={this.props.flag} alt=""></img>
           </span>

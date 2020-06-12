@@ -5,9 +5,9 @@ const MapViewer = props => {
 
   return (
     <article className="mapviewer tile is-child box">
-      <p className="title is-4">Active cases</p>
+      <p className="title is-4">Global map (active cases)</p>
       
-        <Map center={[26.534480, 13.662376]} zoom={2} minZoom={1}>
+        <Map center={[26.534480, 13.662376]} zoom={2} minZoom={2}>
           <TileLayer noWrap={true} url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"/>
 
           {props.data.map((country, index) => (

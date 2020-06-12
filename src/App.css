@@ -90,7 +90,7 @@ body {
 }
 
 .panel {
-  z-index: -2;
+  z-index: 0;
 }
 
 .flag-image {

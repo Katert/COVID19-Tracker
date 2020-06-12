@@ -14,7 +14,8 @@ class App extends Component {
     super();
     this.state = {
       countries: [],
-      searchCountry: '',
+      globalStats: {},
+      searchCountry: "",
     };
   }
 
@@ -33,14 +34,26 @@ class App extends Component {
       .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
+
+    axios
+      .get("https://corona.lmao.ninja/v2/all?yesterday")
+      .then((response) => {
+        this.setState({
+          globalStats: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log("Error fetching and parsing data", error);
+      });
   }
 
   render() {
-
     // Enables searchbar
     let filteredCountries = this.state.countries.filter((country) => {
-      return country.country.toLowerCase().includes(this.state.searchCountry.toLowerCase())
-    })
+      return country.country
+        .toLowerCase()
+        .includes(this.state.searchCountry.toLowerCase());
+    });
 
     return (
       <BrowserRouter>
@@ -51,13 +64,19 @@ class App extends Component {
               <article className="tile is-child box">
                 <p className="title is-4">Countries</p>
                 <article className="panel">
-                  <Panel handleInput={this.handleInput} data={filteredCountries} />
+                  <Panel
+                    handleInput={this.handleInput}
+                    data={filteredCountries}
+                  />
                 </article>
               </article>
             </div>
             <div className="tile is-parent is-vertical">
               <MapViewer data={this.state.countries} />
-              <Graph />
+              <Graph
+                globalStats={this.props.globalStats}
+                data={this.state.countries}
+              />
             </div>
           </div>
         </div>
