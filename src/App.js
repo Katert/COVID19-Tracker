@@ -72,7 +72,10 @@ class App extends Component {
               </article>
             </div>
             <div className="tile is-parent is-vertical">
-              <MapViewer data={this.state.countries} />
+              <article className="mapviewer tile is-child box">
+                <p className="title is-4">Global map (active cases)</p>
+                <MapViewer data={this.state.countries} />
+              </article>
               <Graph
                 globalStats={this.props.globalStats}
                 data={this.state.countries}

@@ -21,6 +21,8 @@ const CountriesList = props => {
         active={country.active}
         critical={country.critical}
         tests={country.tests}
+        lat={country.countryInfo.lat}
+        long={country.countryInfo.long}
       />
     ));
   } else if (props.modifier === "recovered") {
@@ -39,6 +41,8 @@ const CountriesList = props => {
         active={country.active}
         critical={country.critical}
         tests={country.tests}
+        lat={country.countryInfo.lat}
+        long={country.countryInfo.long}
       />
     ));
   } else if (props.modifier === "deaths") {
@@ -57,6 +61,8 @@ const CountriesList = props => {
         active={country.active}
         critical={country.critical}
         tests={country.tests}
+        lat={country.countryInfo.lat}
+        long={country.countryInfo.long}
       />
     ));
   }

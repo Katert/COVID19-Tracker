@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(51, 58, 59);
+  background-color: rgb(65, 76, 88);
 }
 
 body {
@@ -96,6 +96,10 @@ body {
 .flag-image {
   padding-left: 30%;
   padding-bottom: 30px;
+}
+
+.modal-card-title {
+  text-align: center;
 }
 
 .pulse:hover {

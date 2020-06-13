@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 
-const data = [{ name: "Global active cases", uv: 1000, pv: 2400, amt: 2400 }];
+const data = [{ name: "January", uv: 1000, pv: 2400, amt: 2400 }];
 
 class Graph extends Component {
   render() {

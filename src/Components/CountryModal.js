@@ -1,4 +1,5 @@
 import React from "react";
+import MapViewer from './MapViewer'
 
 const CountryModal = props => {
 
