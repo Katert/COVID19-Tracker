@@ -10,6 +10,6 @@ To-Do list:<br/><br/>
 -Add 'report issue' page<br/>
 -Add 'contact' page<br/>
 
-Preview can be found at: https://katert.github.io/covid19-tracker/<br />
+Preview can be found at: https://katert.github.io/covid19-tracker/ (not optimized for mobile devices yet, view on desktop)<br/>
 
 Created by Wesley Kater.
