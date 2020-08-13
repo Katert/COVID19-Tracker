@@ -5,7 +5,7 @@ class Panel extends Component {
   constructor() {
     super();
     this.state = {
-      activeLink: "cases"
+      activeLink: "todayCases"
     };
   }
 
@@ -20,10 +20,10 @@ class Panel extends Component {
       <div>
         <p className="panel-tabs">
           <a
-            className={this.state.activeLink === "cases" ? "is-active" : ""}
-            onClick={() => this.setActiveCategory("cases")}
+            className={this.state.activeLink === "todayCases" ? "is-active" : ""}
+            onClick={() => this.setActiveCategory("todayCases")}
           >
-            <strong>Total cases</strong>
+            <strong>Today cases</strong>
           </a>
           <a
             className={this.state.activeLink === "recovered" ? "is-active" : ""}

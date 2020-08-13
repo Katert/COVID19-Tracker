@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./App.css";
 import axios from "axios";
 
@@ -8,6 +9,8 @@ import Header from "./Components/Header";
 import Panel from "./Components/Panel";
 import MapViewer from "./Components/MapViewer";
 import Graph from "./Components/Graph";
+import Footer from "./Components/Footer";
+
 
 class App extends Component {
   constructor() {
@@ -24,7 +27,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios
+    setTimeout(() => {
+      axios
       .get("https://corona.lmao.ninja/v2/countries?yesterday&sort")
       .then((response) => {
         this.setState({
@@ -45,6 +49,7 @@ class App extends Component {
       .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
+    }, 1100)
   }
 
   render() {
@@ -61,7 +66,12 @@ class App extends Component {
         <div className="app">
           <div id="tiles" className="tile is-ancestor">
             <div id="search-tool" className="tile is-4 is-vertical is-parent">
-              <article className="tile is-child box">
+              <motion.article
+                className="tile is-child box"
+                initial={{ opacity: 0, x: -250 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+              >
                 <p className="title is-4">Countries</p>
                 <article className="panel">
                   <Panel
@@ -69,15 +79,20 @@ class App extends Component {
                     data={filteredCountries}
                   />
                 </article>
-              </article>
+              </motion.article>
             </div>
             <div className="tile is-parent is-vertical">
-              <article className="mapviewer tile is-child box">
+              <motion.article
+                className="mapviewer tile is-child box"
+                initial={{ opacity: 0, x: 250 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+              >
                 <p className="title is-4">Global map (active cases)</p>
                 <MapViewer data={this.state.countries} />
-              </article>
+              </motion.article>
               <Graph
-                globalStats={this.props.globalStats}
+                globalStats={this.state.globalStats}
                 data={this.state.countries}
               />
             </div>

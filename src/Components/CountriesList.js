@@ -5,7 +5,7 @@ const CountriesList = props => {
   const results = props.data;
   let countries;
 
-  if (props.modifier === "cases") {
+  if (props.modifier === "todayCases") {
     countries = results.map((country, index) => (
       <Country
         key={index}
@@ -13,7 +13,7 @@ const CountriesList = props => {
         flag={country.countryInfo.flag}
         name={country.country}
         totalCases={country.cases} // for modal
-        cases={country.cases} // for panel
+        cases={country.todayCases} // for panel
         todayCases={country.todayCases}
         deaths={country.deaths}
         todayDeaths={country.todayDeaths}

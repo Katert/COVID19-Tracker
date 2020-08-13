@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default class Header extends Component {
   render() {
     return (
-      <nav
+      <motion.nav
         className="navbar is-black"
         role="navigation"
         aria-label="main navigation"
+        initial={{ opacity: 0, y: -250 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <div className="navbar-brand">
           <span className="navbar-item">
@@ -37,9 +41,6 @@ export default class Header extends Component {
               </a>
 
               <div className="navbar-dropdown">
-                <Link to={"/about"} className="navbar-item">
-                  About
-                </Link>
                 <a
                   href="https://github.com/Katert/covid19-tracker"
                   className="navbar-item"
@@ -48,23 +49,13 @@ export default class Header extends Component {
                 </a>
                 <hr className="navbar-divider" />
                 <Link to={"/report-issue"} className="navbar-item">
-                  Report an issue
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <Link to={"/contact"} id="contact-button" className="button">
-                  <strong>Contact</strong>
+                  Report an issue (coming soon)
                 </Link>
               </div>
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     );
   }
 }
