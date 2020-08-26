@@ -3,9 +3,9 @@ import { Map, Circle, Popup, TileLayer } from "react-leaflet";
 
 const MapViewer = (props) => {
   return (
-    <Map center={[26.53448, 13.662376]} zoom={1} minZoom={2}>
+    <Map center={[26.53448, 13.662376]} zoom={2} minZoom={2}>
       <TileLayer
-        noWrap={true}
+        // noWrap={true}
         url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
       />
 
