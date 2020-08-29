@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./App.css";
+import "./style/css/App.css";
 import axios from "axios";
 
 // Component imports
@@ -49,7 +49,7 @@ class App extends Component {
       .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
-    }, 1100)
+    }, 1500)
   }
 
   render() {
@@ -67,13 +67,14 @@ class App extends Component {
           <div id="tiles" className="tile is-ancestor">
             <div id="search-tool" className="tile is-4 is-vertical is-parent">
               <motion.article
+                id="panel-tile"
                 className="tile is-child box"
                 initial={{ opacity: 0, x: -250 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
               >
-                <p className="title is-4">Countries</p>
-                <article className="panel">
+                <article className="panel is-black">
+                  <p className="panel-heading">Search</p>
                   <Panel
                     handleInput={this.handleInput}
                     data={filteredCountries}
@@ -88,7 +89,6 @@ class App extends Component {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
               >
-                <p className="title is-4">Global map (active cases)</p>
                 <MapViewer data={this.state.countries} />
               </motion.article>
               <Graph
@@ -97,6 +97,7 @@ class App extends Component {
               />
             </div>
           </div>
+          <Footer/>
         </div>
       </BrowserRouter>
     );

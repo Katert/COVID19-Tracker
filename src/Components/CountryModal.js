@@ -1,19 +1,24 @@
 import React from "react";
-import MapViewer from './MapViewer'
+import { motion } from "framer-motion";
 
-const CountryModal = props => {
-
-    return (
-      <div className={props.isActive === true ? 'modal is-active' : 'modal'}>
-        <div className="modal-background"></div>
-        <div className="modal-card">
-          <header className="modal-card-head">
-            <p className="modal-card-title">{props.name}</p><br/>
-          </header>
-          <section className="modal-card-body">
-            <img className="flag-image" src={props.flag} alt=""/>
-            <br/>
-            <div className="table-container">
+const CountryModal = (props) => {
+  return (
+    <motion.div 
+      className={props.isActive === true ? "modal is-active" : "modal"}
+      initial={{opacity: -5}}
+      animate={{opacity: 1}}
+      transition={{duration: 2}}
+      >
+      <div className="modal-background"></div>
+      <div className="modal-card">
+        <header className="modal-card-head">
+          <p className="modal-card-title">{props.name}</p>
+          <br />
+        </header>
+        <section className="modal-card-body">
+          <img className="flag-image" src={props.flag} alt="" />
+          <br />
+          <div className="table-container">
             <table className="table is-fullwidth">
               <tbody>
                 <tr>
@@ -50,15 +55,14 @@ const CountryModal = props => {
                 </tr>
               </tbody>
             </table>
-            </div>
-          </section>
-          <footer className="modal-card-foot">
-            <button className="button">Close</button>
-          </footer>
-        </div>
+          </div>
+        </section>
+        <footer className="modal-card-foot">
+          <button className="button">Close</button>
+        </footer>
       </div>
-    );
-  
+    </motion.div>
+  );
 };
 
 export default CountryModal;

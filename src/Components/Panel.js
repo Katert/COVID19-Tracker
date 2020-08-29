@@ -5,13 +5,13 @@ class Panel extends Component {
   constructor() {
     super();
     this.state = {
-      activeLink: "todayCases"
+      activeLink: "totalCases",
     };
   }
 
   setActiveCategory = (category) => {
     this.setState({
-      activeLink: category
+      activeLink: category,
     });
   };
 
@@ -20,22 +20,24 @@ class Panel extends Component {
       <div>
         <p className="panel-tabs">
           <a
-            className={this.state.activeLink === "todayCases" ? "is-active" : ""}
-            onClick={() => this.setActiveCategory("todayCases")}
+            className={
+              this.state.activeLink === "totalCases" ? "is-active" : ""
+            }
+            onClick={() => this.setActiveCategory("totalCases")}
           >
-            <strong>Today cases</strong>
+            Total cases
           </a>
           <a
             className={this.state.activeLink === "recovered" ? "is-active" : ""}
             onClick={() => this.setActiveCategory("recovered")}
           >
-            <strong>Cured</strong>
+            Cured
           </a>
           <a
             className={this.state.activeLink === "deaths" ? "is-active" : ""}
             onClick={() => this.setActiveCategory("deaths")}
           >
-            <strong>Deaths</strong>
+            Deaths
           </a>
         </p>
         <div className="panel-block">
@@ -43,7 +45,7 @@ class Panel extends Component {
             <input
               className="input is-dark"
               type="text"
-              placeholder="Search"
+              placeholder="Country name"
               onChange={this.props.handleInput}
             />
             <span className="icon is-left">

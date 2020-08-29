@@ -43,6 +43,8 @@ export default class Header extends Component {
               <div className="navbar-dropdown">
                 <a
                   href="https://github.com/Katert/covid19-tracker"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="navbar-item"
                 >
                   Project repo (Github)

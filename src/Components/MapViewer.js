@@ -3,10 +3,13 @@ import { Map, Circle, Popup, TileLayer } from "react-leaflet";
 
 const MapViewer = (props) => {
   return (
-    <Map center={[26.53448, 13.662376]} zoom={2} minZoom={2}>
+
+    <article className="panel is-black">
+      <p className="panel-heading">Map</p>
+      <div className="panel-block">
+      <Map center={[26.53448, 13.662376]} zoom={2} minZoom={2}>
       <TileLayer
-        // noWrap={true}
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        url="https://{s}.tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=Er9ofBREDSyyRYhMr443VkEcBwTP2bRNipwAA4TQMBmiSxuz5mkd9hV7fg7KSEIr"
       />
 
       {props.data.map((country, index) => (
@@ -14,16 +17,19 @@ const MapViewer = (props) => {
           className="pulse"
           key={index}
           center={[country.countryInfo.lat, country.countryInfo.long]}
-          color="rgb(102, 163, 121)"
+          color="rgb(53, 173, 93)"
           radius={country.active / 1.5}
         >
           <Popup>
-            {country.country}<br />
+            <u>{country.country}</u><br />
             Active cases: {country.active}
           </Popup>
         </Circle>
       ))}
     </Map>
+      </div>
+    </article>
+
   );
 };
 
